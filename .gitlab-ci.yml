@@ -1,0 +1,22 @@
+unit_tests:
+
+	
+netlify_review:
+	image: 
+	stages: test
+	script:
+	    - npm ci
+	    - npm test
+artifacts:
+	when: always
+	reports:
+		junits: reports/junit.xml
+	
+netlify:
+	image: node:22-alpine
+	stage: .pre
+	variables:
+
+scripts:
+	-npm install -g netlify-cli
+	-netlify --version
