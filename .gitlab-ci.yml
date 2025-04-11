@@ -14,8 +14,8 @@ image: node:22-alpine
 variables:
  NETLIFY_SITE_ID: '9ff9b087-22b9-4146-931d-5c5622e0261d'
 script: 
-	- npm install -g netlify-cli
-	- netlify --version
-	- echo "Deploying to the site id $NETLIFY_SITE_ID"
+- npm install -g netlify-cli
+- netlify --version
+- echo "Deploying to the site id $NETLIFY_SITE_ID"
  
  
