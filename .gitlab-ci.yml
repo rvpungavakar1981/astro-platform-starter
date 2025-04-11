@@ -35,11 +35,11 @@ before_script:
   	- npm install -g netlify-cli
   	- apk add curl
 script: 
-	- netlify --version
-	- netlify status
-        - echo "Deploying to the site id $NETLIFY_SITE_ID
-	- netlify deploy --dir build --json | tee deploy-result.json
- 	- netlify deploy --alias staging --dir build
-  	- curl 'https://staging-learn-gitlab-mindit.netlify.app/' | grep 'Gitlab'
+- netlify --version
+- netlify status
+- echo "Deploying to the site id $NETLIFY_SITE_ID
+- netlify deploy --dir build --json | tee deploy-result.json
+- netlify deploy --alias staging --dir build
+- curl 'https://staging-learn-gitlab-mindit.netlify.app/' | grep 'Gitlab'
 
  
