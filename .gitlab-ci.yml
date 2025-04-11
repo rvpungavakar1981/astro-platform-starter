@@ -13,15 +13,15 @@ before_script:
   	- npm install -g netlify-cli
   	- apk add curl jq
 script: 
-	- netlify --version
-	- netlify status
-        - echo "Deploying to the site id $NETLIFY_SITE_ID
-	- netlify deploy --dir build --json | tee deploy-result.json
-     	- REVIEW_URL=$(jq -r '.deploy_url' deploy-result.json)
-	- echo $REVIEW_URL
-     	- curl $REVIEW_URL | grep 'Gitlab'
-	- echo "$REVIEW_URL=$REVIEW_URL" > deploy.env
-     	- cat deploy.env
+- netlify --version
+- netlify status
+- echo "Deploying to the site id $NETLIFY_SITE_ID
+- netlify deploy --dir build --json | tee deploy-result.json
+- REVIEW_URL=$(jq -r '.deploy_url' deploy-result.json)
+- echo $REVIEW_URL
+- curl $REVIEW_URL | grep 'Gitlab'
+- echo "$REVIEW_URL=$REVIEW_URL" > deploy.env
+- cat deploy.env
 artifacts:
 reports:
  dotenv: deploy.env
